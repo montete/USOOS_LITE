@@ -5,16 +5,17 @@ session_start();
 <html>
 <head>
 <meta charset="utf-8">
-<title>Zaloguj siê do USOOS</title>
+<title>Login to USOOS</title>
 </head>
-<body>
-<form method="post" enctype="multipart/form-data">
-<table>
+<body style="background-color:#6698FF">
+<div style ="margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;width:100px;height:100px;">
+<form method="post" enctype="multipart/form-data" align=center>
+<table align=center>
+<tr><td colspan ="2">USOOS LIGHT</td></tr>
 <tr><td>login:</td><td><input type="text" name="vallogin" value="<? echo isset ($_POST [vallogin]) ? $_POST[vallogin] : ""; ?>"/></td></tr>
-<tr><td>password:</td><td><input type="text" name="valpassword" value="<? echo isset ($_POST [valpassword]) ? $_POST[valpassword] : ""; ?>"/></td></tr>
-</table>
-<input type="submit" value="Wyslij" />
-</form>
+<tr><td>password:</td><td><input type="password" name="valpassword" value="<? echo isset ($_POST [valpassword]) ? $_POST[valpassword] : ""; ?>"/></td></tr>
+<tr><td><input type="submit" value="Wyslij" /></td></tr>
+<tr><td colspan="2">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	
@@ -53,9 +54,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$obj = json_decode($response, true);
 		$_SESSION["code"] = $obj["code"];
 		$_SESSION ["id"] = $obj["id"];
-		echo "\nlogowanie_sukces";
+		//echo "\nlogowanie_sukces";
 		//echo $_SESSION["code"];
 		header('Refresh: 1; URL=dashboard.php');
 	}
 }
 ?>
+</td></tr>
+</table>
+
+</form>
+</body>
+</div>
+</html>

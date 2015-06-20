@@ -1,7 +1,8 @@
 <?php
 session_start();
 ?>
-
+<html>
+<body style="background-color:#6698FF">
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	
@@ -35,3 +36,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 ?>
+</body>
+</html>
